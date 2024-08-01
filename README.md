@@ -1,6 +1,17 @@
+
 # SafetyStrapAI
+
+#### Index
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [Configuration](#configuration)
+6. [Example](#example)
+8. [License](#license)
+
 ### Introduction
-A Python-based tool designed to identify whether drivers in a set of images are wearing seat belts. <br> Given a folder containing images, the application processes each image 1and generates <br> a report indicating which drivers are wearing seat belts and which are not.
+A Python-based tool designed to identify whether drivers in a set of images are wearing seat belts. <br> Given a folder containing images, the application processes each image and generates <br> a report indicating which drivers are wearing seat belts and which are not.
  
 ### Features
 - Batch Processing: Processes multiple images in a single run.
@@ -63,14 +74,16 @@ The application can be configured via command-line arguments:
 - `--output_folder`: Path to the directory where results will be saved.
 - `--model`: (Optional) Path to a custom model file if you wish to use a different model.
 
-### License 
- This project is licensed under the GPL-3.0 license. Se the `LICENSE` file for more details
-
-**Example:**
+### Example:
 
 ```sh
 python SafetyStrapAI.py --input_folder ./images_input --output_folder ./results --model ./custom_model.pth
 ```
+
+### License 
+ This project is licensed under the GPL-3.0 license. Se the `LICENSE` file for more details
+
+ <br>
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
