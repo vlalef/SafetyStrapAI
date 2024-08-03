@@ -1,14 +1,16 @@
 
-# SafetyStrapAI
+# SafetyStrapAI/README.md
 
-#### Index
+### Index
 1. [Introduction](#introduction)
 2. [Features](#features)
 3. [Installation](#installation)
 4. [Usage](#usage)
 5. [Configuration](#configuration)
 6. [Example](#example)
+7. [Dependencies](#dependencies)
 8. [License](#license)
+9. [Contact](#contact)
 
 ### Introduction
 A Python-based tool designed to identify whether drivers in a set of images are wearing seat belts. <br> Given a folder containing images, the application processes each image and generates <br> a report indicating which drivers are wearing seat belts and which are not.
@@ -35,26 +37,75 @@ A Python-based tool designed to identify whether drivers in a set of images are 
     source venv/bin/activate
     ```
 
-3. **Install Dependencies:**
+4. **Install Dependencies:**
     Install the dependencies:
 
     ```sh
     pip install -r requirements.txt
     ```
 
+
 ### Usage
 
-1. **Prepare Your Images:**
+1. **Prepare your dataset:**
+    Ensure that the images are organized into the appropriate directories under dataset/train and dataset/validation as it follows.
+    ```
+    dataset/ 
+    ├── train/
+    │   ├── with_seatbelt/
+    │   │   ├── 1.jpg
+    │   │   ├── 2.jpg
+    │   │   ├── 3.jpg
+    │   │   ├── 4.jpg
+    │   │   ├── 5.jpg
+    │   │   ├── 6.jpg
+    │   │   ├── 7.jpg
+    │   │   ├── 8.jpg
+    │   │   ├── 9.jpg
+    │   │   └── 10.jpg
+    │   └── without_seatbelt/
+    │       ├── 1.jpg
+    │       ├── 2.jpg
+    │       ├── 3.jpg
+    │       ├── 4.jpg
+    │       ├── 5.jpg
+    │       ├── 6.jpg
+    │       ├── 7.jpg
+    │       ├── 8.jpg
+    │       ├── 9.jpg
+    │       └── 10.jpg
+    └── validation/
+        ├── with_seatbelt/
+        │   ├── 1.jpg
+        │   ├── 2.jpg
+        │   ├── 3.jpg
+        │   ├── 4.jpg
+        │   └── 5.jpg
+        └── without_seatbelt/
+            ├── 1.jpg
+            ├── 2.jpg
+            ├── 3.jpg
+            ├── 4.jpg
+            └── 5.jpg
+    ```
    
-   Ensure all images are in a directory, for example, `images_input/`.
 
-2. **Run the Application:**
+2. **Train the model:**
 
-    ```sh
-    python SafetyStrapAI.py --input_folder path/to/your/images --output_folder path/to/save/results
+    ```
+    sh
+    python train_model.py
     ```
 
-3. **Review the Results:**
+   This command will train the model using the images in the `train` directory and validate it using images from the `validation` directory.
+
+4. **Run the application:**
+
+   ```
+   python safety_strap.py --input_folder path/to/your/images --output_folder path/to/save/results
+   ```
+
+6. **Review the Results:**
 
     The application will generate a report in the specified output folder detailing which images contain drivers using seat belts and which do not.
 
@@ -76,14 +127,26 @@ The application can be configured via command-line arguments:
 
 ### Example:
 
-```sh
+```
+sh
 python SafetyStrapAI.py --input_folder ./images_input --output_folder ./results --model ./custom_model.pth
 ```
+
+### Dependencies
+
+- Python 3.9+
+- OpenCV
+- TensorFlow or PyTorch (depending on the model used)
+- NumPy
+- Other dependencies listed in requirements.txt
 
 ### License 
  This project is licensed under the GPL-3.0 license. Se the `LICENSE` file for more details
 
- <br>
+### Contact
+- Author: Alef L. Vaz
+- Email: Alef.Vaz.Contato@gmail.com
+- GitHub: vlalef
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
