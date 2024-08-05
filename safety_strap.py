@@ -48,7 +48,6 @@ def process_images(input_folder, output_folder, model_path):
             prediction = model.predict(img_array)
 
             # Save the result
-            # Corrected logic
             result_text = 'with_seatbelt' if prediction[0] > 0.5 else 'without_seatbelt'
             output_file_path = os.path.join(output_folder, f"{file}_{result_text}.jpg")
             img.save(output_file_path)
