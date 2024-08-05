@@ -32,7 +32,7 @@ A Python-based tool designed to identify whether drivers in a set of images are 
 
 2. **Create and Activate a Virtual Environment:**
 
-    ```sh
+    ```
     python -m venv venv
     source venv/bin/activate
     ```
@@ -40,7 +40,7 @@ A Python-based tool designed to identify whether drivers in a set of images are 
 4. **Install Dependencies:**
     Install the dependencies:
 
-    ```sh
+    ```
     pip install -r requirements.txt
     ```
 
@@ -93,7 +93,6 @@ A Python-based tool designed to identify whether drivers in a set of images are 
 2. **Train the model:**
 
     ```
-    sh
     python train_model.py
     ```
 
@@ -102,7 +101,7 @@ A Python-based tool designed to identify whether drivers in a set of images are 
 4. **Run the application:**
 
    ```
-   python safety_strap.py --input_folder path/to/your/images --output_folder path/to/save/results
+   python safety_strap.py --input_folder ./dataset/validation --output_folder ./results --model ./models/seatbelt_detector.keras
    ```
 
 6. **Review the Results:**
@@ -128,8 +127,7 @@ The application can be configured via command-line arguments:
 ### Example:
 
 ```
-sh
-python SafetyStrapAI.py --input_folder ./images_input --output_folder ./results --model ./custom_model.pth
+python safety_strap.py --input_folder ./dataset/validation --output_folder ./results --model ./models/seatbelt_detector.keras
 ```
 
 ### Dependencies
