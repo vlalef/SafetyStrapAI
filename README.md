@@ -13,7 +13,7 @@
 9. [Contact](#contact)
 
 ### Introduction
-A Python-based tool designed to identify whether drivers in a set of images are wearing seat belts. <br> Given a folder containing images, the application processes each image and generates <br> a report indicating which drivers are wearing seat belts and which are not.
+A Python-based tool designed to identify whether drivers in a set of images are wearing seat belts. Given a folder containing images, the application processes each image and generates a report indicating which drivers are wearing seat belts and which are not.
  
 ### Features
 - Batch Processing: Processes multiple images in a single run.
@@ -134,9 +134,11 @@ python safety_strap.py --input_folder ./dataset/validation --output_folder ./res
 
 - Python 3.9+
 - OpenCV
-- TensorFlow or PyTorch (depending on the model used)
+- TensorFlow
 - NumPy
-- Other dependencies listed in requirements.txt
+- Keras
+- Pillow
+- SciPy
 
 ### License 
  This project is licensed under the GPL-3.0 license. Se the `LICENSE` file for more details
