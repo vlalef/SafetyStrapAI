@@ -1,6 +1,6 @@
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Input
 from tensorflow.keras.optimizers import Adam
 
 
@@ -53,7 +53,8 @@ def build_model():
         model: Compiled CNN model.
     """
     model = Sequential([
-        Conv2D(32, (3, 3), activation='relu', input_shape=(224, 224, 3)),  # First convolutional layer
+        Input(shape=(224, 224, 3)),  # Input layer
+        Conv2D(32, (3, 3), activation='relu'),  # First convolutional layer
         MaxPooling2D(pool_size=(2, 2)),  # First pooling layer
         Conv2D(64, (3, 3), activation='relu'),  # Second convolutional layer
         MaxPooling2D(pool_size=(2, 2)),  # Second pooling layer
@@ -87,7 +88,7 @@ def train_model(train_gen, val_gen, save_model_path):
         validation_data=val_gen
     )
 
-    # Save the trained model
+    # Save the trained model in Keras native format
     model.save(save_model_path)
 
 
@@ -95,8 +96,7 @@ if __name__ == '__main__':
     # Define the paths to the training and validation data directories
     train_directory = 'dataset/train'
     val_directory = 'dataset/validation'
-    model_save_path = 'models/seatbelt_detector.h5'  # Path to save the trained model
-
+    model_save_path = 'models/seatbelt_detector.keras'  # Path to save the trained model
     # Prepare the data generators
     train_generator, val_generator = prepare_data(train_directory, val_directory)
 
